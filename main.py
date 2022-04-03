@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 TOP_LEFT_X = 1894
-TOP_LEFT_Y = 2
+TOP_LEFT_Y = 3
 
 
 def load_image_from_file(file: str) -> Image:
