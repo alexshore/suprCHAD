@@ -8,10 +8,10 @@ TOP_LEFT_X = 1895
 TOP_LEFT_Y = 3
 
 
-def load_start() -> Image:
-    start_CHAD = Image.open(Path("start_CHAD.png"))
-    start_CHAD.convert("RGBA")
-    return start_CHAD
+def load_image_from_file(file: str) -> Image:
+    image = Image.open(Path(file))
+    image.convert("RGBA")
+    return image
 
 
 def create_blank_canvas() -> Image:
@@ -35,15 +35,14 @@ def place_overlay_on_canvas(overlay: Image, canvas: Image) -> Image:
 
 
 def save_image(image: Image, name: str) -> None:
-    image.save(Path("output_images") / f"{name}-{int(datetime.timestamp(datetime.now()))}.png")
+    image.save(Path("output_images/archive") / f"{name}-{int(datetime.timestamp(datetime.now()))}.png")
     image.save(Path("output_images") / f"{name}.png")
 
 
 def main():
-    start_CHAD = load_start()
+    start_CHAD = load_image_from_file(file="start_CHAD.png")
     blank_canvas = create_blank_canvas()
     overlay_CHAD = convert_image_to_overlay(image=start_CHAD)
-    save_image(image=overlay_CHAD, name="overlay_CHAD")
     final_CHAD = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas)
     save_image(image=final_CHAD, name="final_CHAD")
 
