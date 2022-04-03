@@ -4,7 +4,7 @@ from PIL import Image
 from datetime import datetime
 
 
-TOP_LEFT_X = 1895
+TOP_LEFT_X = 3
 TOP_LEFT_Y = 3
 
 
