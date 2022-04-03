@@ -10,16 +10,17 @@ TOP_LEFT_Y = 3
 
 def load_start() -> Image:
     start_CHAD = Image.open(Path("start_CHAD.png"))
+    start_CHAD.convert("RGBA")
     return start_CHAD
 
 
-def create_blank_image() -> Image:
-    blank_image = Image.new("RGB", (6000, 3000))
-    return blank_image
+def create_blank_canvas() -> Image:
+    blank_canvas = Image.new("RGBA", (6000, 3000), (0, 0, 0, 0))
+    return blank_canvas
 
 
 def convert_image_to_overlay(image: Image) -> Image:
-    new_image = Image.new("RGB", (image.size[0] * 3, image.size[1] * 3))
+    new_image = Image.new("RGBA", (image.size[0] * 3, image.size[1] * 3), (0, 0, 0, 0))
     for i in range(image.size[0]):
         for j in range(image.size[1]):
             new_image.putpixel(((i * 3) + 1, (j * 3) + 1), image.getpixel((i, j)))
@@ -38,18 +39,9 @@ def save_image(image: Image, name: str) -> None:
     image.save(Path("output_images") / f"{name}.png")
 
 
-def get_colour_pallet_from_image(image: Image) -> list:
-    pallet = []
-    for i in range(image.size[0]):
-        for j in range(image.size[1]):
-            if (pixel := image.getpixel((i, j))) not in pallet:
-                pallet.append(pixel)
-    return pallet
-
-
 def main():
     start_CHAD = load_start()
-    blank_canvas = create_blank_image()
+    blank_canvas = create_blank_canvas()
     overlay_CHAD = convert_image_to_overlay(image=start_CHAD)
     save_image(image=overlay_CHAD, name="overlay_CHAD")
     final_CHAD = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas)
