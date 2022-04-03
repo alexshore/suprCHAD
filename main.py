@@ -4,8 +4,8 @@ from PIL import Image
 from datetime import datetime
 
 
-TOP_LEFT_X = 1895
-TOP_LEFT_Y = 3
+TOP_LEFT_X = 1894
+TOP_LEFT_Y = 2
 
 
 def load_image_from_file(file: str) -> Image:
@@ -40,7 +40,7 @@ def save_image(image: Image, name: str) -> None:
 
 
 def main():
-    start_CHAD = load_image_from_file(file="start_CHAD.png")
+    start_CHAD = load_image_from_file(file="start_CHAD_with_link.png")
     blank_canvas = create_blank_canvas()
     overlay_CHAD = convert_image_to_overlay(image=start_CHAD)
     final_CHAD = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas)
