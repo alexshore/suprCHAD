@@ -14,12 +14,12 @@ def load_start() -> Image:
 
 
 def create_blank_image() -> Image:
-    blank_image = Image.new("RGB", (6000, 3000), color="white")
+    blank_image = Image.new("RGB", (6000, 3000))
     return blank_image
 
 
 def convert_image_to_overlay(image: Image) -> Image:
-    new_image = Image.new("RGB", (image.size[0] * 3, image.size[1] * 3), color="white")
+    new_image = Image.new("RGB", (image.size[0] * 3, image.size[1] * 3))
     for i in range(image.size[0]):
         for j in range(image.size[1]):
             new_image.putpixel(((i * 3) + 1, (j * 3) + 1), image.getpixel((i, j)))
