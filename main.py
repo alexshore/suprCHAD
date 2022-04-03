@@ -46,8 +46,9 @@ def main():
     overlay_CHAD = convert_image_to_overlay(image=start_CHAD)
     overlay_JRPG = convert_image_to_overlay(image=start_JRPG)
     canvas_with_chad = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas, x=TOP_LEFT_X, y=TOP_LEFT_Y)
-    canvas_with_jrpg = place_overlay_on_canvas(overlay=overlay_JRPG, canvas=canvas_with_chad, x=1688, y=1452)
-    save_image(image=canvas_with_jrpg, name="final_CHAD")
+    canvas_with_jrpg = place_overlay_on_canvas(overlay=overlay_JRPG, canvas=canvas_with_chad, x=1333, y=1356)
+    canvas_with_other_chad = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=canvas_with_jrpg, x=1894, y=3)
+    save_image(image=canvas_with_other_chad, name="final_CHAD")
 
 
 if __name__ == "__main__":
