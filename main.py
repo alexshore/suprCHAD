@@ -27,10 +27,10 @@ def convert_image_to_overlay(image: Image) -> Image:
     return new_image
 
 
-def place_overlay_on_canvas(overlay: Image, canvas: Image) -> Image:
+def place_overlay_on_canvas(overlay: Image, canvas: Image, x: int, y: int) -> Image:
     for i in range(overlay.size[0]):
         for j in range(overlay.size[1]):
-            canvas.putpixel((TOP_LEFT_X * 3 + i, TOP_LEFT_Y * 3 + j), overlay.getpixel((i, j)))
+            canvas.putpixel((x * 3 + i, y * 3 + j), overlay.getpixel((i, j)))
     return canvas
 
 
@@ -41,10 +41,13 @@ def save_image(image: Image, name: str) -> None:
 
 def main():
     start_CHAD = load_image_from_file(file="start_CHAD_with_link.png")
+    start_JRPG = load_image_from_file(file="start_JRPG.png")
     blank_canvas = create_blank_canvas()
     overlay_CHAD = convert_image_to_overlay(image=start_CHAD)
-    final_CHAD = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas)
-    save_image(image=final_CHAD, name="final_CHAD")
+    overlay_JRPG = convert_image_to_overlay(image=start_JRPG)
+    canvas_with_chad = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas, x=TOP_LEFT_X, y=TOP_LEFT_Y)
+    canvas_with_jrpg = place_overlay_on_canvas(overlay=overlay_JRPG, canvas=canvas_with_chad, x=1688, y=1452)
+    save_image(image=canvas_with_jrpg, name="final_CHAD")
 
 
 if __name__ == "__main__":
