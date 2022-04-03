@@ -4,8 +4,8 @@ from PIL import Image
 from datetime import datetime
 
 
-TOP_LEFT_X = 0
-TOP_LEFT_Y = 0
+TOP_LEFT_X = 1894
+TOP_LEFT_Y = 3
 
 
 def load_image_from_file(file: str) -> Image:
