@@ -4,8 +4,8 @@ from PIL import Image
 from datetime import datetime
 
 
-TOP_LEFT_X = 1894
-TOP_LEFT_Y = 3
+TOP_LEFT_X = 1400
+TOP_LEFT_Y = 1390
 
 
 def load_image_from_file(file: str) -> Image:
@@ -15,7 +15,7 @@ def load_image_from_file(file: str) -> Image:
 
 
 def create_blank_canvas() -> Image:
-    blank_canvas = Image.new("RGBA", (6000, 3000), (0, 0, 0, 0))
+    blank_canvas = Image.new("RGBA", (6000, 6000), (0, 0, 0, 0))
     return blank_canvas
 
 
