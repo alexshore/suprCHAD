@@ -46,7 +46,7 @@ def main():
     overlay_CHAD = convert_image_to_overlay(image=start_CHAD)
     overlay_jrpg = convert_image_to_overlay(image=start_jrpg)
     canvas_with_chad = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas, x=TOP_LEFT_X, y=TOP_LEFT_Y)
-    canvas_with_jrpg = place_overlay_on_canvas(overlay=overlay_jrpg, canvas=canvas_with_chad, x=1640, y=1826)
+    canvas_with_jrpg = place_overlay_on_canvas(overlay=overlay_jrpg, canvas=canvas_with_chad, x=1791, y=1640)
     save_image(image=canvas_with_jrpg, name="final_CHAD")
 
 
