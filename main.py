@@ -4,7 +4,7 @@ from PIL import Image
 from datetime import datetime
 
 
-TOP_LEFT_X = 1436
+TOP_LEFT_X = 1437
 TOP_LEFT_Y = 1338
 
 
