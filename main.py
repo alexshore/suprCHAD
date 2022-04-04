@@ -40,16 +40,20 @@ def save_image(image: Image, name: str) -> None:
 
 
 def main():
-    start_CHAD = load_image_from_file(file="start_CHAD_with_link.png")
-    start_jrpg = load_image_from_file(file="start_JRPG.png")
-    # start_volt = load_image_from_file(file="start_VOLT.png")
     blank_canvas = create_blank_canvas()
+
+    start_CHAD = load_image_from_file(file="start_CHAD_with_link.png")
     overlay_CHAD = convert_image_to_overlay(image=start_CHAD)
-    overlay_jrpg = convert_image_to_overlay(image=start_jrpg)
-    # overlay_volt = convert_image_to_overlay(image=start_volt)
     canvas = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas, x=TOP_LEFT_X, y=TOP_LEFT_Y)
-    canvas = place_overlay_on_canvas(overlay=overlay_jrpg, canvas=canvas, x=1787, y=1640)
+
+    start_jrpg = load_image_from_file(file="start_JRPG.png")
+    overlay_jrpg = convert_image_to_overlay(image=start_jrpg)
+    canvas = place_overlay_on_canvas(overlay=overlay_jrpg, canvas=canvas, x=1784, y=1640)
+
+    # start_volt = load_image_from_file(file="start_VOLT.png")
+    # overlay_volt = convert_image_to_overlay(image=start_volt)
     # canvas = place_overlay_on_canvas(overlay=overlay_volt, canvas=canvas, x=0, y=0)
+
     save_image(image=canvas, name="final_CHAD")
 
 
