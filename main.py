@@ -4,7 +4,7 @@ from PIL import Image
 from datetime import datetime
 
 
-TOP_LEFT_X = 1400
+TOP_LEFT_X = 1436
 TOP_LEFT_Y = 1338
 
 
@@ -44,8 +44,7 @@ def main():
     blank_canvas = create_blank_canvas()
     overlay_CHAD = convert_image_to_overlay(image=start_CHAD)
     canvas_with_chad = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=blank_canvas, x=TOP_LEFT_X, y=TOP_LEFT_Y)
-    canvas_with_other_chad = place_overlay_on_canvas(overlay=overlay_CHAD, canvas=canvas_with_chad, x=1894, y=2)
-    save_image(image=canvas_with_other_chad, name="final_CHAD")
+    save_image(image=canvas_with_chad, name="final_CHAD")
 
 
 if __name__ == "__main__":
