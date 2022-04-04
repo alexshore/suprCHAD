@@ -50,9 +50,9 @@ def main():
     overlay_jrpg = convert_image_to_overlay(image=start_jrpg)
     canvas = place_overlay_on_canvas(overlay=overlay_jrpg, canvas=canvas, x=1784, y=1640)
 
-    # start_volt = load_image_from_file(file="start_VOLT.png")
-    # overlay_volt = convert_image_to_overlay(image=start_volt)
-    # canvas = place_overlay_on_canvas(overlay=overlay_volt, canvas=canvas, x=0, y=0)
+    start_duck = load_image_from_file(file="start_DUCK.png")
+    overlay_duck = convert_image_to_overlay(image=start_duck)
+    canvas = place_overlay_on_canvas(overlay=overlay_duck, canvas=canvas, x=1887, y=1099)
 
     save_image(image=canvas, name="final_CHAD")
 
